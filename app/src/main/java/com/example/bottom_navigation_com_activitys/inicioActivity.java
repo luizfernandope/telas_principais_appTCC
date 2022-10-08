@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.StatusBarManager;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ public class inicioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        //barra de notificacoes preta
+        this.getWindow().setStatusBarColor(getResources().getColor(R.color.black));
 
         //resolvendo carrosel de fotos
         viewPager = findViewById(R.id.viewPager_carroselFotos_inicio);

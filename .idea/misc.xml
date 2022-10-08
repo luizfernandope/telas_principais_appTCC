@@ -3,8 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/container_arredondado_sem_bordas.xml" value="0.167" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/container_com_bordas.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_agendar_consulta.xml" value="0.32" />
         <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_baseline_dashboard.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_dente_servicos.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_informacoes.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_minha_agenda.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_perguntas.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_relogio.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_telefone.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_telefone2.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_termos_politica.xml" value="0.32" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/drawable/ic_whatss.xml" value="0.32" />
         <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/layout/activity_carrosel_fotos_adapter.xml" value="0.24818840579710144" />
+        <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
         <entry key="..\:/Escola2022/ANDROID_STUDIO/aaaaaa/teste_navegacao/app/src/main/res/layout/activity_main.xml" value="0.24818840579710144" />
       </map>
     </option>

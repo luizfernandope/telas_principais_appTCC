@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".inicioActivity"
     android:background="#e2e2e2">
-
+<!--    scroll principal-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,12 +15,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigatio"
-        android:layout_marginBottom="90dp">
-
+        android:layout_marginBottom="90dp"
+        android:scrollbars="none">
+        <!-- Regras para o layout dentro do scroll -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            <!--  Container do cabeçalho principal da pagina  -->
             <LinearLayout
                 android:id="@+id/carroselContainer_inicio"
                 android:layout_width="match_parent"
@@ -30,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
-
+                <!--  Container horizontal para texto de indicacao da pagina e duvidas -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,6 +47,7 @@
                         android:textStyle="bold"
                         android:textSize="32dp"
                         android:textColor="@color/white" />
+                    <!-- Gambiarra para colocar icone de duvidas no final a direita-->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -53,12 +55,12 @@
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:background="@drawable/ic_baseline_settings"
+                            android:background="@drawable/ic_interrogacao"
                             android:backgroundTint="@color/white"
                             android:layout_gravity="center_vertical"/>
                     </LinearLayout>
                 </LinearLayout>
-
+                <!-- Carrosel de fotos do cabeçalho -->
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewPager_carroselFotos_inicio"
                     android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                     android:layout_marginEnd="40dp"
                     android:layout_marginTop="20dp"
                     />
-
+                <!-- Indicador do carrosel de fotos-->
                 <com.rd.PageIndicatorView
                     android:id="@+id/pageIndicator_carrosel_inicio"
                     android:layout_width="wrap_content"
@@ -81,8 +83,9 @@
                     android:layout_gravity="center"
                     android:padding="10dp"/>
             </LinearLayout>
-
+            <!-- container da parte acesso rapido-->
             <LinearLayout
+                android:id="@+id/acessoRapidocontainer_inicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -99,23 +102,24 @@
                     android:textSize="22dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
-
+                <!-- scroll horizontal dos links de acesso rapido-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:scrollbars="none">
-
+                    <!-- layout que permite os links ficarem na horizontal-->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
-
+                        <!-- agendar consulta-->
                         <LinearLayout
                             android:id="@+id/agendarConsulta_inicio"
-                            android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
+                            android:layout_width="135dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"
                             android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical">
@@ -123,23 +127,25 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_agendar_consulta"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="agendar consulta"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
-
+                        <!-- minha agenda-->
                         <LinearLayout
                             android:id="@+id/minhaAgenda_inicio"
                             android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
-                            android:padding="10dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -147,23 +153,25 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_minha_agenda"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="minha agenda"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
-
+                        <!-- ver serviços-->
                         <LinearLayout
                             android:id="@+id/verServicos_inicio"
                             android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
-                            android:padding="10dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -171,23 +179,25 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_dente_servicos"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="ver serviços"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
-
+                        <!-- sobre nos-->
                         <LinearLayout
                             android:id="@+id/sobreNos_inicio"
                             android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
-                            android:padding="10dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -195,23 +205,25 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_informacoes"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="sobre nós"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
-
+                        <!-- perguntas frequentes-->
                         <LinearLayout
                             android:id="@+id/perguntasFrequent_inicio"
                             android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
-                            android:padding="10dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -219,23 +231,25 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_perguntas"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="perguntas frequentes"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
-
+                        <!-- politicas de uso-->
                         <LinearLayout
                             android:id="@+id/politicaUso_inicio"
                             android:layout_width="130dp"
-                            android:layout_height="80dp"
-                            android:background="#1574F6"
-                            android:padding="10dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="#1574F8"                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp"
@@ -244,28 +258,340 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/ic_baseline_settings"
+                                android:background="@drawable/ic_termos_politica"
                                 android:backgroundTint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="políticas de uso"
                                 android:drawableTint="@color/white"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:layout_marginTop="4dp"/>
 
                         </LinearLayout>
 
                     </LinearLayout>
-
-
                 </HorizontalScrollView>
             </LinearLayout>
+            <!-- container da parte nossa equipe-->
+            <LinearLayout
+                android:id="@+id/nossaEquipeContainer_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/acessoRapidocontainer_inicio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingStart="40dp"
+                android:layout_marginTop="40dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nossa equipe"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <!-- scroll horizontal de cada membro da equipe-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:scrollbars="none">
+                    <!-- layout que permite cada integrante fique na horizontal -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- integrante 1-->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dra_valeria"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Clínico geral / Ortodontia\nEstética / implantodontia"
+                                android:textSize="11dp"
+                                android:textAlignment="center"
+                                android:textColor="#1F5EFF"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dra Valéria Pegorari"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="CROSP – 39935"
+                                android:textSize="10dp"
+                                android:textAlignment="center"
+                                android:textColor="#B7B7B7"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <!-- integrante 2-->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="25dp">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dra_valeria"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Clínico geral / Ortodontia\nEstética / implantodontia"
+                                android:textSize="11dp"
+                                android:textAlignment="center"
+                                android:textColor="#1F5EFF"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dra Valéria Pegorari"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="CROSP – 39935"
+                                android:textSize="10dp"
+                                android:textAlignment="center"
+                                android:textColor="#B7B7B7"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <!-- integrante 3-->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="25dp">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dra_valeria"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Clínico geral / Ortodontia\nEstética / implantodontia"
+                                android:textSize="11dp"
+                                android:textAlignment="center"
+                                android:textColor="#1F5EFF"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dra Valéria Pegorari"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="CROSP – 39935"
+                                android:textSize="10dp"
+                                android:textAlignment="center"
+                                android:textColor="#B7B7B7"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <!-- integrante 4-->
+                        <LinearLayout
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginEnd="40dp">
+
+                            <ImageView
+                                android:layout_width="140dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/dra_valeria"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Clínico geral / Ortodontia\nEstética / implantodontia"
+                                android:textSize="11dp"
+                                android:textAlignment="center"
+                                android:textColor="#1F5EFF"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Dra Valéria Pegorari"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="CROSP – 39935"
+                                android:textSize="10dp"
+                                android:textAlignment="center"
+                                android:textColor="#B7B7B7"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+            <!-- container da parte informacoes da clinica-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/nossaEquipeContainer_inicio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingStart="40dp"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informações da clinica"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <!-- permitindo o scroll horizontal (caso de celulares menores)-->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+                    <!-- fazendo com os itens fiquem na horizontal-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- clinica1-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/container_com_bordas"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unidade vila maria\nSão Paulo"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(684) 555-0102"
+                                android:drawableStart="@drawable/ic_whatss"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(684) 555-0102"
+                                android:drawableStart="@drawable/ic_telefone"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/horario_funcionamento_semana"
+                                android:drawableStart="@drawable/ic_relogio"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/horario_funcionamento_sabado"
+                                android:drawableStart="@drawable/ic_relogio"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                        </LinearLayout>
+                        <!-- clinica2-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/container_com_bordas"
+                            android:padding="8dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="40dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unidade Santa Teresa\nCarapícuiba"
+                                 android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(684) 555-0102"
+                                android:drawableStart="@drawable/ic_whatss"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(684) 555-0102"
+                                android:drawableStart="@drawable/ic_telefone"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/horario_funcionamento_semana"
+                                android:drawableStart="@drawable/ic_relogio"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/horario_funcionamento_sabado"
+                                android:drawableStart="@drawable/ic_relogio"
+                                android:drawablePadding="6dp"
+                                android:textColor="@color/black"
+                                android:layout_marginTop="6dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
 
-
+    <!-- barra de navegacao no fim da tela-->
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigatio"
         android:layout_width="match_parent"
