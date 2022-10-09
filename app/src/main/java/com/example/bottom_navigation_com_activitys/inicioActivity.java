@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.app.StatusBarManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -101,6 +102,17 @@ public class inicioActivity extends AppCompatActivity {
     }
     public void irParaPerfil(){
         Intent intent = new Intent(inicioActivity.this, perfilActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void agendar(View v){
+        Intent intent = new Intent(inicioActivity.this, servicosActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void minhaAgenda(View v){
+        Intent intent = new Intent(inicioActivity.this, agendaActivity.class);
         startActivity(intent);
         finish();
     }

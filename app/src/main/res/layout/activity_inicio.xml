@@ -116,23 +116,25 @@
                             android:layout_width="135dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:padding="10dp"
+                            android:gravity="center_vertical"
+                            android:onClick="agendar"
                             android:orientation="vertical"
-                            android:gravity="center_vertical">
+                            android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/ic_agendar_consulta"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="agendar consulta"
+                                android:layout_marginTop="4dp"
                                 android:drawableTint="@color/white"
+                                android:text="agendar consulta"
                                 android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
+                                android:textStyle="bold" />
 
                         </LinearLayout>
                         <!-- minha agenda-->
@@ -140,25 +142,27 @@
                             android:id="@+id/minhaAgenda_inicio"
                             android:layout_width="130dp"
                             android:layout_height="100dp"
+                            android:layout_marginStart="10dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:padding="10dp"
-                            android:orientation="vertical"
                             android:gravity="center_vertical"
-                            android:layout_marginStart="10dp">
+                            android:onClick="minhaAgenda"
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/ic_minha_agenda"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="minha agenda"
+                                android:layout_marginTop="4dp"
                                 android:drawableTint="@color/white"
+                                android:text="minha agenda"
                                 android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
+                                android:textStyle="bold" />
 
                         </LinearLayout>
                         <!-- ver serviços-->
@@ -166,25 +170,27 @@
                             android:id="@+id/verServicos_inicio"
                             android:layout_width="130dp"
                             android:layout_height="100dp"
+                            android:layout_marginStart="10dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:padding="10dp"
-                            android:orientation="vertical"
                             android:gravity="center_vertical"
-                            android:layout_marginStart="10dp">
+                            android:onClick="agendar"
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/ic_dente_servicos"
-                                android:backgroundTint="@color/white"/>
+                                android:backgroundTint="@color/white" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ver serviços"
+                                android:layout_marginTop="4dp"
                                 android:drawableTint="@color/white"
+                                android:text="ver serviços"
                                 android:textColor="@color/white"
-                                android:textStyle="bold"
-                                android:layout_marginTop="4dp"/>
+                                android:textStyle="bold" />
 
                         </LinearLayout>
                         <!-- sobre nos-->
