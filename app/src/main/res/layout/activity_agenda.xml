@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".agendaActivity"
+    android:background="@color/fundo_telas_principais">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigatio_agenda"
+        android:scrollbars="none">
+        <!-- Regras para o layout dentro do scroll -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--  Container do cabeçalho principal da pagina  -->
+            <LinearLayout
+                android:id="@+id/header_agenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fundo_header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <!--  Container horizontal para texto de indicacao da pagina e duvidas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:paddingTop="20dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="minha agenda"
+                        android:textStyle="bold"
+                        android:textSize="32dp"
+                        android:textColor="@color/white" />
+                    <!-- Gambiarra para colocar icone de duvidas no final a direita-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/ic_interrogacao"
+                            android:backgroundTint="@color/white"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="filtros"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:layout_marginBottom="25dp"
+                    android:scrollbars="none"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="todos"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:padding="6dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="agendados"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:background="@drawable/container_com_bordas"
+                            android:padding="6dp"
+                            android:layout_marginStart="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="concluidos"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:background="@drawable/container_com_bordas"
+                            android:padding="6dp"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_minha_agenda"
+                            android:backgroundTint="@color/white"
+                            android:layout_marginStart="10dp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/header_agenda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="30dp">
+
+                <!--consulta1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--consulta2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--consulta3-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--consulta4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--consulta5-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--consulta6-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="02/09/2022"
+                        android:textColor="@color/black"
+                        android:paddingStart="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="sexta-feira"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/container_arredondado_sem_bordas"
+                    android:layout_marginBottom="80dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="45"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:paddingStart="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="clareamento dentario"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="55"
+                        android:gravity="right|center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="15:00H"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:autoSizeTextType="uniform"
+                            android:gravity="right"
+                            android:text="av.avenida 123"
+                            android:textColor="@color/white"
+                            android:paddingEnd="10dp"/>
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:autoSizeTextType="uniform"
+                            android:textAlignment="center"
+                            android:text="ver mais"
+                            android:textColor="@color/black"
+                            android:background="@drawable/container_arredondado_sem_bordas"
+                            android:backgroundTint="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- barra de navegacao no fim da tela-->
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigatio_agenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_circleColor="#ffffff"
+        app:mbn_backgroundBottomColor="#FFFFFF"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="@color/icon_menu_unselect"
+        app:mbn_rippleColor="#1D16EB"
+        app:mbn_selectedIconColor="@color/icon_menu_select"
+        app:mbn_shadowColor="@color/sobra_menu"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

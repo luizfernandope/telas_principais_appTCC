@@ -2,44 +2,20 @@ package com.example.bottom_navigation_com_activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
-import android.app.StatusBarManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
-import com.example.bottom_navigation_com_activitys.adapters_todos_slides.carroselFotosAdapter;
 
-
-public class inicioActivity extends AppCompatActivity {
-
-     ViewPager viewPager;
-    ArrayList<Integer> images = new ArrayList<>();
-    carroselFotosAdapter adapter;
-
+public class agendaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio);
-        //barra de notificacoes preta
-        this.getWindow().setStatusBarColor(getResources().getColor(R.color.fundo_header));
+        setContentView(R.layout.activity_agenda);
 
-        //resolvendo carrosel de fotos
-        viewPager = findViewById(R.id.viewPager_carroselFotos_inicio);
-        images.add(R.drawable.foto_carrosel1);
-        images.add(R.drawable.foto_carrosel1);
-        images.add(R.drawable.foto_carrosel1);
-
-        adapter = new carroselFotosAdapter(this, images);
-        viewPager.setAdapter(adapter);
-
-        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigatio_inicio);
+        MeowBottomNavigation bottomNavigation = findViewById(R.id.bottomNavigatio_agenda);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_baseline_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_dashboard));
@@ -68,13 +44,13 @@ public class inicioActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (item.getId()){
                     case 1:
-                        nome = "inicio";
+                        irParaInicio();
                         break;
                     case 2:
                         irParaServicos();
                         break;
                     case 3:
-                        irParaAgenda();
+                        nome = "agenda";
                         break;
                     case 4:
                         irParaPerfil();
@@ -86,21 +62,21 @@ public class inicioActivity extends AppCompatActivity {
 
         });
         //começando com a pagina home selecionada
-        bottomNavigation.show(1, true);
+        bottomNavigation.show(3, true);
     }
 
     public void irParaServicos(){
-        Intent intent = new Intent(inicioActivity.this, servicosActivity.class);
+        Intent intent = new Intent(agendaActivity.this, servicosActivity.class);
         startActivity(intent);
         finish();
     }
-    public void irParaAgenda(){
-        Intent intent = new Intent(inicioActivity.this, agendaActivity.class);
+    public void irParaInicio(){
+        Intent intent = new Intent(agendaActivity.this, inicioActivity.class);
         startActivity(intent);
         finish();
     }
     public void irParaPerfil(){
-        Intent intent = new Intent(inicioActivity.this, perfilActivity.class);
+        Intent intent = new Intent(agendaActivity.this, perfilActivity.class);
         startActivity(intent);
         finish();
     }

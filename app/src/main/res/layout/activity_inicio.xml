@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".inicioActivity"
-    android:background="#e2e2e2">
+    android:background="@color/fundo_telas_principais">
 <!--    scroll principal-->
     <ScrollView
         android:layout_width="match_parent"
@@ -14,8 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigatio"
-        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigatio_inicio"
         android:scrollbars="none">
         <!-- Regras para o layout dentro do scroll -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@color/black"
+                android:background="@drawable/fundo_header"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
@@ -64,9 +63,7 @@
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/viewPager_carroselFotos_inicio"
                     android:layout_width="match_parent"
-                    android:layout_height="270dp"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
+                    android:layout_height="240dp"
                     android:layout_marginTop="20dp"
                     />
                 <!-- Indicador do carrosel de fotos-->
@@ -74,11 +71,11 @@
                     android:id="@+id/pageIndicator_carrosel_inicio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:piv_animationType="worm"
+                    app:piv_animationType="drop"
                     app:piv_dynamicCount="true"
                     app:piv_interactiveAnimation="true"
-                    app:piv_selectedColor="@color/white"
-                    app:piv_unselectedColor="@color/icon_menu_unselect"
+                    app:piv_selectedColor="@color/indicador_selecionado_header"
+                    app:piv_unselectedColor="@color/indicador_unselect_header"
                     app:piv_viewPager="@id/viewPager_carroselFotos_inicio"
                     android:layout_gravity="center"
                     android:padding="10dp"/>
@@ -101,7 +98,7 @@
                     android:text="Acesso rápido"
                     android:textSize="22dp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/titulos_body"/>
                 <!-- scroll horizontal dos links de acesso rapido-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -119,7 +116,6 @@
                             android:layout_width="135dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"
                             android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical">
@@ -145,7 +141,7 @@
                             android:layout_width="130dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"                            android:padding="10dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -171,7 +167,7 @@
                             android:layout_width="130dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"                            android:padding="10dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -197,7 +193,7 @@
                             android:layout_width="130dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"                            android:padding="10dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -223,7 +219,7 @@
                             android:layout_width="130dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"                            android:padding="10dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp">
@@ -249,7 +245,7 @@
                             android:layout_width="130dp"
                             android:layout_height="100dp"
                             android:background="@drawable/container_arredondado_sem_bordas"
-                            android:backgroundTint="#1574F8"                            android:padding="10dp"
+                            android:padding="10dp"
                             android:orientation="vertical"
                             android:gravity="center_vertical"
                             android:layout_marginStart="10dp"
@@ -292,7 +288,7 @@
                     android:text="Nossa equipe"
                     android:textSize="22dp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/titulos_body"/>
                 <!-- scroll horizontal de cada membro da equipe-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -332,10 +328,10 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="CROSP – 39935"
+                                android:text="CROSP – 33847"
                                 android:textSize="10dp"
                                 android:textAlignment="center"
-                                android:textColor="#B7B7B7"
+                                android:textColor="@color/texto_cinza"
                                 android:textStyle="bold"/>
                         </LinearLayout>
                         <!-- integrante 2-->
@@ -367,10 +363,10 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="CROSP – 39935"
+                                android:text="CROSP – 33847"
                                 android:textSize="10dp"
                                 android:textAlignment="center"
-                                android:textColor="#B7B7B7"
+                                android:textColor="@color/texto_cinza"
                                 android:textStyle="bold"/>
                         </LinearLayout>
                         <!-- integrante 3-->
@@ -402,10 +398,10 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="CROSP – 39935"
+                                android:text="CROSP – 33847"
                                 android:textSize="10dp"
                                 android:textAlignment="center"
-                                android:textColor="#B7B7B7"
+                                android:textColor="@color/texto_cinza"
                                 android:textStyle="bold"/>
                         </LinearLayout>
                         <!-- integrante 4-->
@@ -438,10 +434,10 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="CROSP – 39935"
+                                android:text="CROSP – 33847"
                                 android:textSize="10dp"
                                 android:textAlignment="center"
-                                android:textColor="#B7B7B7"
+                                android:textColor="@color/texto_cinza"
                                 android:textStyle="bold"/>
                         </LinearLayout>
 
@@ -458,6 +454,7 @@
                 app:layout_constraintTop_toBottomOf="@id/nossaEquipeContainer_inicio"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:paddingBottom="80dp"
                 android:paddingStart="40dp"
                 android:layout_marginTop="40dp">
 
@@ -467,12 +464,13 @@
                     android:text="Informações da clinica"
                     android:textSize="22dp"
                     android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/titulos_body"/>
                 <!-- permitindo o scroll horizontal (caso de celulares menores)-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="15dp"
+                    android:scrollbars="none">
                     <!-- fazendo com os itens fiquem na horizontal-->
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -484,7 +482,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:background="@drawable/container_com_bordas"
-                            android:padding="8dp">
+                            android:padding="10dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -593,7 +591,7 @@
 
     <!-- barra de navegacao no fim da tela-->
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-        android:id="@+id/bottomNavigatio"
+        android:id="@+id/bottomNavigatio_inicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mbn_circleColor="#ffffff"

@@ -8,8 +8,40 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="fundo_telas_principais">#e2e2e2</color>
+
+    <color name="fundo_header">#1C1C1C</color>
+    <color name="indicador_selecionado_header">#097FF4</color>
+    <color name="indicador_unselect_header">#F5F5F5</color>
+    <color name="links_acesso_raído">#1574F6</color>
+    <color name="texto_header">#FFFFFFFF</color>
+    <color name="titulos_body">#262626</color>
+
+    <color name="borda_clara">#D8E0E8</color>
+    <color name="borda_escura">#212121</color>
+
+    <color name="texto_cinza">#B7B7B7</color>
+
+    <color name="azul_mais_forte">#1574F6</color>
+    <color name="azul_forte">#097FF4</color>
+    <color name="azul_medio">#45A0EF</color>
+    <color name="azul_fraco">#6AB1EE</color>
 
     <color name="icon_menu_select">#1574F6</color>
-    <color name="icon_menu_unselect">#90a4ae</color>
+    <color name="icon_menu_unselect">#B7B7B7</color>
     <color name="sobra_menu">#8C1574F6</color>
+
+    <style name="StyleTilEditTextTheme">
+        <item name="colorControlActivated">@color/azul_fraco</item>
+        <item name="android:textColorHint">@color/texto_cinza</item>
+        <item name="cornerRadius">12dp</item>
+
+    </style>
+
+    <style name="StyledTilEditText">
+        <item name="android:theme">@style/StyleTilEditTextTheme</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textColorHint">#ffffff</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
 </resources>

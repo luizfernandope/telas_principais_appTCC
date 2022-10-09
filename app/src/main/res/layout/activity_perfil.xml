@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".perfilActivity"
+    android:background="@color/fundo_telas_principais">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigatio_perfil"
+        android:scrollbars="none">
+        <!-- Regras para o layout dentro do scroll -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--  Container do cabeçalho principal da pagina  -->
+            <LinearLayout
+                android:id="@+id/header_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/fundo_header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <!--  Container horizontal para texto de indicacao da pagina e duvidas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:paddingTop="20dp"
+                    android:layout_marginBottom="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="meu perfil"
+                        android:textStyle="bold"
+                        android:textSize="32dp"
+                        android:textColor="@color/white" />
+                    <!-- Gambiarra para colocar icone de duvidas no final a direita-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/ic_interrogacao"
+                            android:backgroundTint="@color/white"
+                            android:layout_gravity="center_vertical"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/header_perfil"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:paddingBottom="80dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meus dados"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/titulos_body"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/container_arredondado_sem_bordas"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nomeContainer_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        app:boxStrokeColor="@color/azul_forte"
+                        android:textColorHint="@color/white"
+                        app:hintTextColor="@color/white"
+                        app:startIconDrawable="@drawable/ic_baseline_person">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nomeEditText_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="nome"
+                            android:textColor="@color/white"
+                            android:text="Luiz Fernando Pegorari"
+                            android:enabled="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cpfContainer_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        app:boxStrokeColor="@color/azul_forte"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@color/white"
+                        app:hintTextColor="@color/white"
+                        app:startIconDrawable="@drawable/ic_cpf">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/cpfEditText_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="CPF"
+                            android:textColor="@color/white"
+                            android:text="XXX.XXX.XXX-XX"
+                            android:enabled="false"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dataNasciContainer_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        app:boxStrokeColor="@color/azul_forte"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@color/white"
+                        app:hintTextColor="@color/white"
+                        app:startIconDrawable="@drawable/ic_aniversario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dataNasciEditText_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="data de nascimento"
+                            android:textColorHint="@color/texto_cinza"
+                            android:textColor="@color/white"
+                            android:text="21/02/2005"
+                            android:enabled="false"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/sexoContainer_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        app:boxStrokeColor="@color/azul_forte"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@color/white"
+                        app:hintTextColor="@color/white"
+                        app:startIconDrawable="@drawable/ic_masculino">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/sexoEditText_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="sexo"
+                            android:textColorHint="@color/texto_cinza"
+                            android:textColor="@color/white"
+                            android:text="Masculino"
+                            android:enabled="false"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailContainer_perfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        app:boxStrokeColor="@color/azul_forte"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@color/white"
+                        app:hintTextColor="@color/white"
+                        app:startIconDrawable="@drawable/ic_mail">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEditText_perfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="email"
+                            android:enabled="false"
+                            android:textColorHint="@color/texto_cinza"
+                            android:textColor="@color/white"
+                            android:text="email@gmail.com" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/container_com_bordas"
+                        android:text="editar perfil"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Segurança"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/titulos_body"
+                    android:layout_marginTop="30dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/container_com_bordas"
+                    android:text="mudar senha"
+                    android:drawableStart="@drawable/ic_cadeado"
+                    android:drawableTint="@color/black"
+                    android:drawableEnd="@drawable/ic_direita"
+                    android:gravity="start|center"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/container_com_bordas"
+                    android:text="entrar com biometria"
+                    android:drawableStart="@drawable/ic_biometria"
+                    android:drawableEnd="@drawable/ic_direita"
+                    android:gravity="start|center"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geral"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/titulos_body"
+                    android:layout_marginTop="30dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/container_com_bordas"
+                    android:text="termos de uso"
+                    android:drawableStart="@drawable/ic_termos_politica"
+                    android:drawableEnd="@drawable/ic_direita"
+                    android:gravity="start|center"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/container_com_bordas"
+                    android:text="ajuda"
+                    android:drawableStart="@drawable/ic_interrogacao"
+                    android:drawableEnd="@drawable/ic_direita"
+                    android:gravity="start|center"
+                    android:padding="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:text="Sair"
+                    android:textSize="22dp"
+                    android:drawableStart="@drawable/ic_baseline_person"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/azul_forte"
+                    android:drawableTint="@color/azul_forte"
+                    android:drawablePadding="10dp"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="Versão 1.0.1"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- barra de navegacao no fim da tela-->
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigatio_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_circleColor="#ffffff"
+        app:mbn_backgroundBottomColor="#FFFFFF"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="@color/icon_menu_unselect"
+        app:mbn_rippleColor="#1D16EB"
+        app:mbn_selectedIconColor="@color/icon_menu_select"
+        app:mbn_shadowColor="@color/sobra_menu"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

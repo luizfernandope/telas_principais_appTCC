@@ -3,6 +3,7 @@
     <item>
         <shape>
             <corners android:radius="12dp"/>
+            <solid android:color="@color/links_acesso_raído"/>
         </shape>
     </item>
 </selector>
